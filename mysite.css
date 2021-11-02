@@ -1,0 +1,117 @@
+
+/* Styling using the element tag itself */
+body{
+    /*This will affect the body as a structure and not the individual elements inside the body*/
+    background-color: white;
+    /*All the text in the body, unless specified, will be green */
+    color:black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: normal;
+    /* I can specify the font features by using a shorter way */
+    font: Arial, 18px, normal;
+    /*This increases the line between texts*/
+    line-height: 1.5em;
+    margin: 0;
+
+}
+
+
+
+
+
+/*To ensure that the text or elements don't touch the sides of the page, we use a CONTAINER CLASS*/
+.container{
+    /*making the width in percentages will make the container class be responsive when the screen size changes*/
+    width: 80%;
+    /*margin-auto will place the container at the center of the page. MARGIN MEANS SPACING AROUND AN ELEMENT OUTSIDE ITS BORDER */
+    margin: auto;
+    
+}
+
+/*Classes are given to specific group of element tags inside another element tag that only the CSS belongs to for example <card>, <footer>, <div> */
+.box-1{
+    background-color:#333;
+    color: white;
+    
+    /*Changes the specified part of the border*/
+    border-bottom-width:8px ;
+    border-top-style:dotted;
+
+    /*The sequence goes as SIZE, COLOR, STYLE */
+    border: 3px blue solid;
+
+
+    /*PADDING IS THE SPACE BETWEEN AN ELEMENT AND ITS BORDER*/
+    /*The sequence goes as TOP, BOTTOM, RIGHT, LEFT */
+    padding: 20px 10px 10px 10px;
+
+
+    margin: 20px 20px;
+}
+
+
+/*Targetting a specific element inside a an element with a class*/
+.box-1 h1{
+    color: green;
+    font-family: tahoma;
+    font-style: italic;
+    font-weight: 200;
+    text-decoration: underline;
+    /*Make the text in uppercase*/
+    text-transform: uppercase;
+}
+
+.box-2{
+    border: 3px red dotted;
+    padding: 20px 10px;
+    margin: 20px 20px;
+}
+
+.categories{
+    /*Changes will affect the whole class and not the specific List*/
+    border: 1px black dotted;
+    padding: 20px;
+    margin: 20px;
+    /*This will make the edges of the border change and become a bit curved*/
+    border-radius: 15px;
+}
+
+.categories h2{
+    text-align: center;
+}
+
+.categories ul{
+    padding: 20px;
+    /*This will remove the bullets or whatever list style was before*/
+    list-style: none;
+} 
+
+/*This styling will affect all the <a> tags in the document*/
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover{
+    /* When the <a> tag has the cursor ontop,  it will change to blue color */
+    color:blue;
+}
+
+a:active{
+    /*When I Click on the link, it wil flash some color */
+    color: green;
+}
+
+.categories li{
+    padding: 8px;
+    border-bottom:black 1px solid;
+    /*I can use an image as a list style for the <li>*/
+    list-style-image: url('../Images/green-check.png');
+}
+
+/*CHECKOUT BOX MODEL IN CSS */
+
+/*IDs are given to specific element tags that only the CSS belongs to for example <navbar>, <footer-head> */
+
+
