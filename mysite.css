@@ -16,8 +16,11 @@ body{
 
 }
 
-
-
+/*This is a global css property and affects all elements in the document*/
+/*Used for control flow when using the float property(no elements can appear on the side that is clear) and on top of each other */
+.clr{
+    clear:both;
+}
 
 
 /*To ensure that the text or elements don't touch the sides of the page, we use a CONTAINER CLASS*/
@@ -26,8 +29,15 @@ body{
     width: 80%;
     /*margin-auto will place the container at the center of the page. MARGIN MEANS SPACING AROUND AN ELEMENT OUTSIDE ITS BORDER */
     margin: auto;
-    
 }
+
+.button{
+    background-color: black;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+}
+
 
 /*Classes are given to specific group of element tags inside another element tag that only the CSS belongs to for example <card>, <footer>, <div> */
 .box-1{
@@ -39,7 +49,7 @@ body{
     border-top-style:dotted;
 
     /*The sequence goes as SIZE, COLOR, STYLE */
-    border: 3px blue solid;
+    border: 3px blue dotted;
 
 
     /*PADDING IS THE SPACE BETWEEN AN ELEMENT AND ITS BORDER*/
@@ -107,11 +117,131 @@ a:active{
     padding: 8px;
     border-bottom:black 1px solid;
     /*I can use an image as a list style for the <li>*/
-    list-style-image: url('../Images/green-check.png');
+    list-style-image: url('../CSSCHEATSHEET/Images/green-check.png');
+}
+
+.my-form{
+    padding: 20px;
+}
+
+.form-group{
+    /*This will target all individual div classes that rep the form fields*/
+    padding-bottom: 25px;
+}
+
+.my-form label{
+    /*This will rep the label tags for the form fields as they are all in the 'my-form' classs*/
+    /*placing this property will mmake the labels be in their own line separate from the inputs they rep*/
+    display:block;
+}
+
+.my-form input[type="text"], .my-form [type="text-area"]{
+    /*The [type="text] will specify that these css properties are for the text inputs only */
+    padding: 8px;
+    width: 100%;
+}
+
+/*FLOATING AND ALIGNMENT*/
+.block{
+    float:left;
+    /*Floating left will position the elements at the left*/
+    width:33.3%;
+    border:1px solid black;
+    padding:10px;
+    /*The box-sizing command takes the border and padding properties and applies it into the width. Placing the boxes in a single line */
+    box-sizing:border-box;
+}
+
+
+/*IDs are given to specific element tags that only the CSS belongs to for example <navbar>, <footer-head> */
+
+#main-block{
+    float: left;
+    width: 70%;
+    box-sizing: border-box;
+    padding:15px;
+}
+
+/*The sidebar will be placeed on the right side of the page*/
+#sidebar{
+    float: right;
+    width: 30%;
+    background-color: #333;
+    color:white;
+    /*The box-sizing command takes the border and padding properties and applies it into the with. Placing the boxes in a single line */
+    box-sizing: border-box;
+    padding:15px;
+    margin-top:15px;
+}
+
+/*POSITIONING*/
+/*Static(default) renders the elements in order of the document flow */
+/*Initial places the property to its defaut value */
+/*Inherit means an element will inherit the property of the parent element*/
+/*Relative the element is positioned relative to its normal position but we can add properties like 'top' 'bottom' 'left' 'right' */
+.p-box{
+    width:800px;
+    height: 500px;
+    border: 1px solid black;
+    margin-top:30px;
+    color:green;
+    /*Relative position will enable us move the child elements within the parent element to whatever position we want*/
+    position: relative;
+
+/*SETTING AN IMAGE AS THE BACKGROUND OF AN ELEMENT */
+    background-image: url("../Images/light.jpg");
+    /*This will place the image 100px top and 200px at the bottom*/
+    background-position: 100px 200px;
+    /*This can specify which position to place the image within the element */
+    background-position: center;
+    /*The image won't repeat itself within the element*/
+    background-repeat: no-repeat;
+    /*This will set the image to cover the whole element as its background*/
+    background-size:cover;
+  
+}
+
+/*Absolute targets whatever position we want inside a relative position */
+.p-box h1{
+    /*Absolute position will place the child element(h1) at any position I place it to be inside the parent element(div)*/
+    position: absolute;
+    top:40px;
+    left: 200px;
+}
+
+.p-box h2{
+    position:absolute;
+    right: 200px;
+    bottom: 200px;
+}
+/*Fixed means a fixed position in the browser window */
+.fix-me{
+    /*The position must be stated in the property. Fixed position will make the element stuck at whatever position I state*/
+    position: fixed;
+    top: 400px;
+}
+
+
+/*PSEUDO CLASSES*/
+/*This will target the  first child-element(li) in the ul element*/
+.my-list li:first-child{
+    background: red ;
+}
+/*This will target the  last child-element(li) in the ul element*/
+.my-list li:last-child{
+    background:blue ;
+}
+/*To target a specific child element using its number position eg 1,2,3 I will write*/
+.my-list li:nth-child(6){
+    background: yellow;
+}
+/*All the even-positioned elements will have a grey color*/
+.my-list li:nth-child(even){
+    background:grey;
 }
 
 /*CHECKOUT BOX MODEL IN CSS */
 
-/*IDs are given to specific element tags that only the CSS belongs to for example <navbar>, <footer-head> */
+
 
 

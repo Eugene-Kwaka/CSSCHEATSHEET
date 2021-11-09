@@ -1,0 +1,103 @@
+body{
+    background-color: grey;
+    color:black;
+    font-family: Courier New, Courier, monospace;
+    font-size: 16;
+    line-height:1.6em;
+    margin: 0;
+}
+
+.container{
+    width: 80%;
+    margin: auto;
+    /*This will ensure there is no scrollbar even if content is outside the container*/
+    overflow: hidden;
+}
+
+#main-header{
+    background-color:coral;
+    color: white;
+}
+
+#main-navbar{
+    background-color: #333;
+    color: white;
+}
+
+#main-navbar ul{
+    padding: 0;
+    list-style: none;
+}
+
+#main-navbar li{
+    /*After removing the list-style, the <li> can now be placed in-line placing them in one line*/
+    display: inline;
+}
+
+#main-navbar a{
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding-right: 15px;
+}
+
+#showcase{
+    background-image: url("../website/img/royalty.jpg");
+    /*background-position: center right; */
+    background-size: cover; 
+    background-repeat: no-repeat;
+    /*This will set the height of the whole element
+     making it to grow with the text hence responsiveness to the screen size */
+    min-height:300px;
+    margin-bottom: 30px;
+    text-align:center;
+}
+
+#showcase h1{
+    color: white;
+    font-size:30px;
+    line-height: 1.6em;
+    padding-top: 30px;
+}
+
+#main{
+    float:left;
+    width: 70%;
+    padding: 0 30px;
+    box-sizing: border-box;
+}
+
+#sidebar{
+    float: right;
+    width: 30%;
+    background: #333;
+    color:white;
+    box-sizing: border-box;
+    padding: 10px;   
+}
+
+#main-footer{
+    background: #333;
+    color: white;
+    text-align:center;
+    margin: 40px 0px;
+    padding: 30px;
+}
+
+
+/*When the screensize become small to an extent of a mobile phone,
+I don't want the #main and #sidebar to be floated. 
+The condition is that if its a max-with of 600px, 
+then the following properties would take place*/
+@media(max-width:600px){
+    /*the width will change and float property will be disabled for #main*/
+    #main{
+        width: 100%;
+        float:none;
+    }
+    /*the width will change and float property will be disabled for #sidebar*/
+    #sidebar{
+        width: 100%;
+        float:none;
+    }
+}
