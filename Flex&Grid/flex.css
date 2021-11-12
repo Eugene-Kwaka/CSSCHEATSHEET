@@ -1,0 +1,99 @@
+/* Since we want accessibility when the screen size becomes smaller,
+    I will use a Media Query*/
+    @media(min-width:600px){
+        .container-1{
+            /*display:flex; will place the three box items inside to be in the same row (side by side)*/
+            display: flex;
+            
+            /*
+            To change direction such that the box items can either be horizontal or vertical
+            > flex-direction: column;
+            > flex-direction: row;
+        
+            Since the text in the boxes is the same but box-1 has a bigger size hence the text looks small,
+            To recover the space without changing height of the box while placing box-1 a higher position I will use
+            > align-items: flex-start;
+        
+            To place the box-1 at a lower position height than the other boxes
+            > align-items: flex-end;
+        
+            For the box to be at the center in basis of the positions we use
+            align-items: center;
+            */
+        }
+        
+        .container-2{
+            /*The box items in this div class will be placed side to side*/
+            display: flex;
+        
+            /* To place the box items on either sides of the browser page (left, right, center) I will use
+            > justify-content:center;
+            */
+        
+            /*if I want a margin between the box-items in the container*/
+            justify-content: space-between;
+        }
+
+       
+    }
+
+/*This will make all the divs inside this container to have a border around them*/
+.container-1 div{
+    border: 1px black solid;
+    padding: 20px;
+}
+
+.box-1{
+    /*This will specify the size of the box differently from the other boxes*/
+    flex:2;
+    /*Since there are 3 boxes, specifying the order position will place this box in that position the order specifies. 
+    (order:2;) means that box one will be placed at position 2 */
+    order:2;
+}
+
+.box-2{
+    flex:1;
+    order:1;
+}
+
+.box-3{
+    flex:1;
+    order:3;
+}
+
+/** CONTAINER TWO **/
+  
+.container-2 div{
+    /*This property affects all the individual box-items since they are in a container element*/
+    border: 1px black solid;
+    padding: 20px;
+
+    /*Flex-basis does the same function as a width */
+    flex-basis:27%;
+}
+
+/** END OF CONTAINER TWO **/
+
+
+/** CONTAINER THREE**/
+  
+.container-3 div{
+    /*This property affects all the individual box-items since they are in a container element*/
+    border: 1px black solid;
+    padding: 20px;
+
+    /*Flex-basis does the same function as a width */
+    flex-basis:27%;
+}
+
+.container-3{
+    display: flex;
+    justify-content: space-between;
+    /*When items are wrapped within an element, 
+    they fit themselves such that an item is pushed down to form a new row when the screen size is reduced*/
+    flex-wrap: wrap;
+}
+
+/** END OF CONTAINER THREE **/
+
+

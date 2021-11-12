@@ -1,0 +1,46 @@
+
+.container{
+    display: grid;
+
+    /*The grid system can be divided into fractions(recommended).
+    > grid-template-columns: 1fr 2fr 1fr 1 fr;
+    Incase the items are many, we can use repeat and specify the number of items and there grid space */
+    grid-template-columns: repeat(3, 1fr);
+
+    grid-gap: 1em;
+
+    /*This specifies the HEIGHT and now the items will be 100 pixels high
+    > grid-auto-rows: 100px;
+    Since the div2 item has a larger text, the text will overflow.
+    To avoid this, we can specify minimum and maximum Height of an element.
+    THIS PROPERTY WILL AFFECT ALL THE OTHER DIV ITEMS IN THE CONTAINER */
+    grid-auto-rows: minmax(100px, auto);
+}
+
+.container > div{
+    background:#eee;
+    padding: 10px;
+}
+
+/*The div with the odd number position will have this property within the container*/
+.container > div:nth-child(odd){
+    background: #ddd;
+}
+
+
+.nested{
+    display: grid;
+    grid-template-columns:repeat(3, 1fr);
+    grid-auto-rows: 70px;
+    grid-gap: 1em;
+}
+
+.nested > div{
+    border: #333 1px solid;
+    padding: 1em;
+}
+
+/*The div with the odd number position will have this property within the nested*/
+/* .nested > div:nth-child(odd){ */
+    /* background: #ddd; */
+/* } */

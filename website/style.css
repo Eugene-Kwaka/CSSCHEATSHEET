@@ -1,7 +1,7 @@
 body{
     background-color: grey;
     color:black;
-    font-family: Courier New, Courier, monospace;
+    font-family:Lobster, monospace;
     font-size: 16;
     line-height:1.6em;
     margin: 0;
@@ -100,4 +100,16 @@ then the following properties would take place*/
         width: 100%;
         float:none;
     }
+}
+
+#larger-image{
+    width: 500px  ;
+    margin:15px;
+}
+
+img{
+    /*The border-radius can also be set as a percentage*/
+    border-radius:50%;
+    /*Adding the (important) word will priotise this property over all the other properties*/
+    border-style: solid !important;
 }

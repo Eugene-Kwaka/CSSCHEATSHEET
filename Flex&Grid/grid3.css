@@ -1,0 +1,57 @@
+/* JUSTIFYING AND ALIGNING ITEMS */
+
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-auto-rows: minmax(100px, auto);
+    grid-gap: 1em;
+
+    /* Justifying items works like flexbox where the items either align to the Left(start) or Right(end) or the Center */
+    /* > justify-items:start; */
+
+    /*Align-items places the item and its border either at the Top(start), Bottom(end) or at the Center*/
+    /* > align-items:start; */
+}
+.container > div{
+    border: 1px black solid;
+    padding: 10px;
+
+}
+
+
+/* USING LINES IN CSS GRID */
+
+.box1{
+    /* The box wil be placed on Bottom position of the grid */
+    /* > align-self: end; */
+
+    /* Using a line mean that in a grid column/row,
+       there are 4 lines in which setting the grid-column shows what item gets what lines between 1-4. */
+    grid-column: 1/3;
+    /*The lines are affecting the items going down hence we use rows*/
+    grid-row:1/3;
+}
+
+.box2{
+    /* The box wil be placed on Top position of the grid */
+    /* > align-self: start; */
+
+    grid-column:3;
+    grid-row:1/3;
+}
+.box3{
+    /* The box wil be placed on Center position of the grid */
+    /* > justify-self: end; */
+
+    grid-column:2/4;
+    grid-row:3;
+}
+.box4{
+    /* The box wil Stretch across the grid */
+    /* > justify-self: stretch; */
+    
+    /* This will make box4 to overlap box1 */
+    grid-column:1;
+    grid-row:2/4;
+} 
