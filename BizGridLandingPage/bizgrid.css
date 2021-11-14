@@ -1,0 +1,233 @@
+/* CSS VARIABLES */
+
+
+/* Any variables that we create her can be reused throughout the whole stylesheet */
+:root{
+    --primary:#ddd;
+    --dark:#333;
+    --light:#fff;
+    /* Shadow will be used for the font-icons where we change the shadow and color */
+    --shadow:0 1px 5px rgba(104,104,104,0.8)
+
+}
+
+html{
+    /* if we are using padding box-sizing won't affect the width of the element */
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:var(--dark)
+}
+
+body{
+    background: #ccc;
+    margin: 30px 50px;
+    line-height: 1.4em;
+}
+
+.btn{
+    background-color:blue;
+    color: var(--light);
+    /* 1rem is eqivalent of 16px based off the default html font */
+    padding: 0.6rem 1.3rem;
+    margin: 10px;
+    text-decoration: none;
+}
+
+a:hover{
+    background:var(--dark);
+    color: var(--light);
+}
+
+img{
+    /* I want the images to stay within their container */
+    max-width: 100%;
+}
+
+.container{
+    display: grid;
+    /* This will fix the margins set for all the elements in the container */
+    grid-gap: 20px;
+}
+
+
+
+/* NAVIGATION */
+.main-nav ul{
+    display: grid;
+    grid-gap:20px;
+    padding: 0;
+    list-style: none;
+    grid-template-columns: 1fr 1fr  1fr 1fr;
+}
+
+.main-nav a{
+    background: var(--primary);
+    display: block;
+    text-decoration: none;
+    padding: 0.8rem;
+    text-align: center;
+    color: var(--dark);
+    text-transform: uppercase;
+    font-size: 1.1rem;
+}
+
+.main-nav a:hover{
+    background:var(--dark);
+    color: var(--light);
+}
+
+
+
+
+/* TOP CONTAINER */
+.top-container{
+    display: grid;
+    grid-gap:2em;
+    grid-template-areas:
+    /* This shows how the listed elements should be positioned in the page.
+    'showcase' takes 2 positions both in the columns and rows,
+     while 'top-box-a' and 'top-box-b' have their own positions*/
+    'showcase showcase top-box-a' 
+    'showcase showcase top-box-b';
+}
+
+/* The grid-template-areas then have to be defined as follows */
+.showcase{
+    grid-area: showcase;
+    min-height: 400px;
+    background: url("images/web4.jpg");
+    background-size:cover;
+    background-position:center ;
+    padding: 3rem;
+    color:var(--primary);
+    display: flex;
+    /* The elements in this class will be placed one after the other in a vertical manner */
+    flex-direction: column;
+    /* align-items:start; will get the elements to the start(left) side of their class border */
+    align-items: start;
+    /* The items will be placed at the center of the class border(y-axis)  */
+    justify-content: center;
+    box-shadow: var(--shadow);
+}
+
+.showcase h1{
+    font-size: 4rem;
+    margin-bottom: 0;
+    color: var(--light);
+}
+
+.showcase p{
+    font-size: 1.3rem;
+    margin-bottom: 0;
+    color: var(--light);
+}
+
+/* TOP BOX */
+.top-box{
+    background:var(--primary);
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    box-shadow: var(--shadow);
+    padding: 1.5rem;
+}
+
+.price{
+    font-size: 2.5rem;
+}
+.top-box-a{
+    grid-area: top-box-a;
+}
+
+.top-box-b{
+    grid-area: top-box-b;
+}
+
+
+/* BOXES */
+.boxes{
+    display:grid;
+    /* This helps to avoid manually changing the properties when adding items.
+    'auto-fit, minmax' funtions will move the items automatically down when reducing screen size. 
+    this will prevent me from specify the media query for each screen size */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 20px;
+}
+
+.box{
+    box-shadow: var(--shadow);
+    padding: 1.5rem 2rem;
+    text-align: center;
+}
+
+/* INFO SECTION */
+.info{
+    background: var(--primary);
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: 2fr 1fr;
+    box-shadow: var(--shadow);
+    padding: 2.5rem;
+}
+
+
+/* PORTFOLIO */
+.portfolio{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.portfolio img{
+    width: 100%;
+    box-shadow: var(--shadow);
+}
+
+
+/* FOOTER */
+footer{
+    background: var(--dark);
+    text-align: center;
+    padding:1rem;
+    margin-top: 30px;
+    color: var(--light);
+}
+
+
+
+/* MEDIA QUERIES */
+@media(max-width:600px){
+    .top-container{
+        grid-template-areas:
+        'showcase showcase'
+        'top-box-a top-box-b' ;
+    }
+
+    .showcase h1{
+        font-size: 2.5rem;
+    }
+
+    .main-nav ul{
+        grid-template-columns: 1fr;
+    }
+
+    .info{
+        grid-template-columns: 1fr;
+    }
+
+    .info .btn{
+        display: block;
+        text-align: center;
+        margin: auto;
+    }
+}
+
+@media(max-width:500px){
+    .top-container{
+        grid-template-areas:
+        'showcase'
+        'top-box-a'
+        'top-box-b'
+        ;
+    }
+}

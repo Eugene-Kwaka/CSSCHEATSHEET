@@ -7,8 +7,8 @@
             
             /*
             To change direction such that the box items can either be horizontal or vertical
-            > flex-direction: column;
-            > flex-direction: row;
+            > flex-direction: column --> vertical;
+            > flex-direction: row --> horizontal;
         
             Since the text in the boxes is the same but box-1 has a bigger size hence the text looks small,
             To recover the space without changing height of the box while placing box-1 a higher position I will use
