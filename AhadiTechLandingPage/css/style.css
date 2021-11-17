@@ -9,6 +9,9 @@
 /* This is a custom variable in which we can reuse same properties in different elements */
 :root{
     --primary-color:#047aed;
+    --secondary-color:#1c3fa8;
+    --dark-color: #002240;
+    --ligt-color:#f4f4f4;
 }
 body{
     font-family:'Lora', sans-serif;
@@ -40,7 +43,9 @@ p{
 img{
     /* This will make the images fit within their container */
     width: 100%;
+    
 }
+
 
 /* NAVBAR */
 .nav-bar{
@@ -48,29 +53,27 @@ img{
     color: #fff;
     height: 70px;
 }
-
 /* The Navbar ul items will be displayed horizontally against each other */
 .nav-bar ul{
     display: flex;
 }
-
 /* This applies to the individual links with the <a> tag */
 .nav-bar a{
     color: #fff;
     padding: 10px;
     margin: 0 5px;
 }
-
 .nav-bar a:hover{
     /* When i hover on the navlinks, a white borderline will show up beneath them */
     border-bottom:1px #fff solid ;
 }
-
 /* if the nav-bar has a flex class, set it this way
 this will create a space between the two items(spread each item across the document page */
 .nav-bar .flex{
     justify-content: space-between;
 }
+
+
 
 /* SHOWCASE */
 .showcase{
@@ -80,19 +83,16 @@ this will create a space between the two items(spread each item across the docum
     /* if we want to position anything absolute we can */
     position: relative;
 }
-
 .showcase h1{
     font-size: 1.8rem;
     padding: 20px 0;
 }
-
 .showcase .grid{
     grid-template-columns: 55% 45%;
     grid-gap: 30px;
     /* This will remove the scrollbar and the form-item can be seen to go past its container */
     overflow: visible;
 }
-
 .showcase-form{
     position: relative;
     /* the form will be at a position of 80px on top */
@@ -104,12 +104,10 @@ this will create a space between the two items(spread each item across the docum
     /* This will make sure that the form is always in front */
     z-index: 100;
 }
-
 /* Targets the form-control class in the form */
 .showcase-form .form-control{
     margin: 30px; 
 }
-
 /* this will affect only the individual input tags in the form */
 .showcase-form input[type=text], .showcase-form input[type=email]{
     /* Removes the border around an element */
@@ -120,17 +118,14 @@ this will create a space between the two items(spread each item across the docum
     padding: 10px;
     font-size: 18px;
 }
-
 /* This means that when the individual input elements have been clicked-on(focus),
 the outline(small-borders) will be removed */
 .showcase-form input:focus{
     outline:none;
 }
-
 .showcase-form h2{
     text-align:center ;
 }
-
 /* This property is to create a skewed line just right through the showcase-form
 and the showcase-container */
 .showcase::before, .showcase::after{
@@ -157,68 +152,143 @@ and the showcase-container */
 
 
 
+/* STATS */
+.stats{
+    padding-top:100px;
+}
+.stats .grid h3{
+    font-size: 35px;
+}
+.stats .grid p{
+    font-size: 20px;
+    font-weight: bold;
+}
+/* .stats-heading{
+    max-width: 500px;
+    margin:auto;
+} */
 
-/* UTILITIES (CLASSES TO BE REUSED ACROSS THE DOCUMENT) */
-.container{
-    /* This makes it such that the h1 and navbar links do not stretch out
-    when the screensize is bigger than 1100px but they stay within their container */
-    max-width: 1100px;
-    margin: 0 auto;
-    /* This will remove the margin that we set up for the h1 element(AhadiTech),
-    and the nav-bar's back-ground color will touch the top of the document */
-    overflow: auto;
-    padding: 0 40px;
+
+
+/* CLI */
+.cli .grid{
+    grid-template-columns:repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    /* grid-template-areas:
+    'cli-image cli-image card-1'
+    'cli-image cli-image card-2'
+    ; */
+}
+/* *:first-child means the first element inside the said class/element.
+ In this case the child is <img> */
+.cli .grid > *:first-child{
+    /* the image element will span across the grid from column 1 to 2 */
+    grid-column: 1 / span 2;
+    /* the image element will span across the grid from row 1 to 2 */
+    grid-row: 1 / span 2;
+}
+.cli .card{
+    text-align: center;
 }
 
-.card{
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
-    padding: 20px;
-    margin: 10px;
-    color: #333;
+
+
+/* CLOUD */
+.cloud .grid{
+    /* The  */
+    grid-template-columns: 4fr 3fr;
 }
 
-/* A flex class added to the Navbar where the <h1> and <navlinks> will be flex elements */
-.flex{
-    display: flex;
-    /*justify-content:center; will place the items in the center of the horizontal axis */
-    justify-content: center;
-    /* align-items: center; will align the items at the center of the horizontala axis */
-    align-items: center;
-    height: 100%;
+
+/* LANGUAGES */
+.languages .flex{
+    /* The flex-wrap will ensure that the flex items wrap around their container, 
+    whether the screen size is bigger or smaller */
+    flex-wrap: wrap;
+}
+.languages .card{
+    text-align: center;
+    margin: 18px 10px 40px ;
+    /* This will add a smooth effect over the transformation when the cards are hovered over */
+    transition: transform 0.2s ease-in;
+}
+.languages .card h4{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+/* This will ensure the images in the languages section are all of the same size and fit their containers */
+.languages img{
+    width: 100px;
+    height: 100px;
+}
+.languages .card:hover{
+    /* when the language cards are hovered upon they move upwards(translateY(-15px)) */
+    transform: translateY(-15px);
 }
 
-.grid{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 20px;
-    /*justify-content:center; will place the items in the center of the horizontal axis */
-    justify-content: center;
-    /* align-items: center; will align the items at the center of the horizontala axis */
-    align-items: center;
-    height: 100%;
+
+/* FOOTER */
+.footer a{
+    color: #fff;
+}
+.footer .social a{
+    margin: 0 10px; 
+}
+.footer a:hover{
+    border-bottom: 1px #fff solid;
 }
 
-.btn{
-    color: white;
-    /* display: inline-block allows to set a width and height on the element.
-     the top and bottom margins/paddings are respected*/
-    display: inline-block;
-    padding: 10px 30px;
-    /* this provides a small hand as a cursor instead of the arrow */
-    cursor: pointer;
-    background-color: var(--primary-color);
-    border:none;
-    border-radius: 5px;
-}
 
-/* Applies to the Showcase-text button */
-.btn-outline{
-    background-color: transparent;
-    border: 1px #fff solid;
-}
 
-.btn:hover{
-    transform: scale(0.98);
+/* MEDIA QUERIES */
+/* For Tablets & Under*/
+@media(max-width:800px){
+    .grid,
+    .showcase .grid,
+    .stats .grid,
+    .cli .grid,  
+    .cloud .grid{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    .showcase{
+        /* this will let the whole showcase class and its elements take the height of the container */
+        height: auto;
+    }
+
+    .showcase-text{
+        text-align: center;
+        margin-top: 40px;
+    }
+
+    .showcase-form{
+        /* justify the position of that specific item  */
+        justify-self: center;
+        /* margin auto places the item at the center */
+        margin: auto;
+    }
+    .cli .grid > *:first-child{
+        /* the image element will just take 1 column*/
+        grid-column: 1;
+        /* the image element will just take 1 row */
+        grid-row: 1;
+    }
+}
+/* For Mobile Devices */
+@media (max-width:500px){
+    .nav-bar{
+        /* this will make the menu items be under the logo */
+        height:110px ;
+    }
+    .nav-bar .flex{
+        /* This will place the 'Logo' and the 'NavLinks' in a vertical manner */
+        flex-direction: column;
+    }
+    .nav-bar ul{
+        padding: 10px;
+        /* For a Transparent background */
+        background-color: rgb(0, 0, 0, 0.1);
+    }
+
 }

@@ -1,0 +1,187 @@
+/* UTILITIES (CLASSES TO BE REUSED ACROSS THE DOCUMENT) */
+
+.container{
+    /* This makes it such that the h1 and navbar links do not stretch out
+    when the screensize is bigger than 1100px but they stay within their container */
+    max-width: 1100px;
+    margin: 0 auto;
+    /* This will remove the margin that we set up for the h1 element(AhadiTech),
+    and the nav-bar's back-ground color will touch the top of the document */
+    overflow: auto;
+    padding: 0 40px;
+}
+
+.card{
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    padding: 20px;
+    margin: 10px;
+    color: #333;
+}
+
+/* A flex class added to the Navbar where the <h1> and <navlinks> will be flex elements */
+.flex{
+    display: flex;
+    /*justify-content:center; will place the items in the center of the horizontal axis */
+    justify-content: center;
+    /* align-items: center; will align the items at the center of the horizontala axis */
+    align-items: center;
+    height: 100%;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    /*justify-content:center; will place the items in the center of the horizontal axis */
+    justify-content: center;
+    /* align-items: center; will align the items at the center of the horizontala axis */
+    align-items: center;
+    height: 100%;
+}
+
+.btn{
+    color: white;
+    /* display: inline-block allows to set a width and height on the element.
+     the top and bottom margins/paddings are respected*/
+    display: inline-block;
+    padding: 10px 30px;
+    margin:0 30px;
+    /* this provides a small hand as a cursor instead of the arrow */
+    cursor: pointer;
+    background-color: var(--primary-color);
+    border:none;
+    border-radius: 5px;
+}
+
+/* Backgrounds & coloured Buttons */
+/* This will affect all classes with these names.
+ Will work for the CLI Section*/
+.bg-primary, .btn-primary{
+    background-color: var(--primary-color);
+    color: #fff;
+}
+.bg-secondary, .btn-secondary{
+    background-color: var(--secondary-color);
+    color: #fff;
+}
+.bg-dark, .btn-dark{
+    background-color: var(--dark-color);
+    color: #fff;
+}
+
+/* Text Sizes for Headings & Paragraphs */
+.lead{
+    font-size: 20px;
+}
+.lg{
+    font-size: 50px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+/* Applies to the Showcase-text button */
+.btn-outline{
+    background-color: transparent;
+    border: 1px #fff solid;
+}
+
+.btn:hover{
+    transform: scale(0.98);
+}
+
+/* This class is for the Stats Section */
+.grid-3{
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.text-center{
+    text-align: center;
+}
+
+.text-secondary{
+    color:navy;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* Margin Utility Classes */
+/* This utility class is for the margins for the Stats-header */
+.my-1{
+    margin: 1.5rem 0;
+}
+
+.my-2{
+    margin: 2.5rem 0;
+}
+
+.my-3{
+    margin: 3rem 0;
+}
+
+.my-4{
+    margin: 4rem 0;
+}
+.my-5{
+    margin: 5rem 0;
+}
+
+/* Margin all-corners */
+.m-1{
+    margin: 1.5rem;
+}
+
+.m-2{
+    margin: 2.5rem;
+}
+
+.m-3{
+    margin: 3rem;
+}
+
+.m-4{
+    margin: 4rem;
+}
+.m-5{
+    margin: 5rem;
+}
+
+
+/* Padding Utility Classes */
+.py-1{
+    padding: 1.5rem 0;
+}
+
+.py-2{
+    padding: 2.5rem 0;
+}
+
+.py-3{
+    padding: 3rem 0;
+}
+
+.py-4{
+    padding: 4rem 0;
+}
+.py-5{
+    padding: 5rem 0;
+}
+
+/* Padding all-corners */
+.p-1{
+    padding: 1.5rem;
+}
+
+.p-2{
+    padding: 2.5rem;
+}
+
+.p-3{
+    padding: 3rem;
+}
+
+.p-4{
+    padding: 4rem;
+}
+.p-5{
+    padding: 5rem;
+}
+
