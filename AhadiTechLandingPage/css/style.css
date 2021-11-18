@@ -11,7 +11,7 @@
     --primary-color:#047aed;
     --secondary-color:#1c3fa8;
     --dark-color: #002240;
-    --ligt-color:#f4f4f4;
+    --light-color:#f4f4f4;
 }
 body{
     font-family:'Lora', sans-serif;
@@ -43,9 +43,14 @@ p{
 img{
     /* This will make the images fit within their container */
     width: 100%;
-    
 }
 
+/* Css Properties for the html code and pre snippets */
+code, pre{
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
 
 /* NAVBAR */
 .nav-bar{
@@ -93,6 +98,10 @@ this will create a space between the two items(spread each item across the docum
     /* This will remove the scrollbar and the form-item can be seen to go past its container */
     overflow: visible;
 }
+/* implementing Animation effect on this class */
+.showcase-text{
+    animation: slideInFromLeft 1s ease-in;
+}
 .showcase-form{
     position: relative;
     /* the form will be at a position of 80px on top */
@@ -103,6 +112,8 @@ this will create a space between the two items(spread each item across the docum
     padding: 40px;
     /* This will make sure that the form is always in front */
     z-index: 100;
+    /* implementing Animation effect on this class */
+    animation: slideInFromRight 1s ease-in;
 }
 /* Targets the form-control class in the form */
 .showcase-form .form-control{
@@ -155,6 +166,7 @@ and the showcase-container */
 /* STATS */
 .stats{
     padding-top:100px;
+    animation: slideInFromBottom 1s ease-in;
 }
 .stats .grid h3{
     font-size: 35px;
@@ -227,6 +239,66 @@ and the showcase-container */
 }
 
 
+
+/* FEATURES PAGE */
+/* Features Head */
+.features-head img{
+    width: 300px;
+    justify-self: flex-end;
+}
+/* Sub Head  */
+.features-sub-head img{
+    width: 300px;
+    justify-self: flex-end;
+}
+/* Features Main */
+/* This affects the single icons in the card */
+.features-main .card > i{
+    margin: 10px;
+}
+.features-main .grid{
+    padding: 30px;
+}
+.features-main .grid > *:first-child{
+    /* the first card flex item will span across the grid from column 1 to 3 */
+    grid-column: 1 / span 3;
+}
+.features-main .grid > *:nth-child(2){
+    grid-column: 1 / span 2;
+}
+
+
+/* DOCS PAGE */
+/* Docs Head */
+.docs-head img{
+    width: 300px;
+    justify-self: flex-end;
+}
+.docs-main h3{
+    margin: 20px 0;
+}
+.docs-main .grid{
+    grid-template-columns: 1fr 2fr;
+    /* This will pick both items in the class and place them at the top(flex-start) along the class's y axis */
+    align-items:flex-start ;
+}
+/* this will create a line(border) at the bottom for each navlink */
+.docs-main nav li{
+    font-size:17px ;
+    padding-bottom: 5px;
+    border-bottom: 1px #333 solid;
+    margin-bottom: 5px;
+}
+.docs-main a:hover{
+    font-weight: bold;
+
+}
+
+.docs-main .btn-primary{
+    margin: 0;
+}
+
+
 /* FOOTER */
 .footer a{
     color: #fff;
@@ -238,7 +310,48 @@ and the showcase-container */
     border-bottom: 1px #fff solid;
 }
 
+/* ANIMATION CSS */
+@keyframes slideInFromLeft{
+    0%{
+        /* The -100% axis will push it from the farthest Left */
+        transform: translateX(-100%);
+    }
 
+    100%{
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInFromRight{
+    0%{
+        /* The +100% axis will push it from the farthest Right */
+        transform: translateX(100%);
+    }
+
+    100%{
+        transform: translateY(0);
+    }
+}
+@keyframes slideInFromTop{
+    0%{
+        /* The -100% axis will push it from the top */
+        transform: translateY(-100%);
+    }
+
+    100%{
+        transform: translateX(0);
+    }
+}
+@keyframes slideInFromBottom{
+    0%{
+        /* The -100% axis will push it from the Bottom */
+        transform: translateY(100%);
+    }
+
+    100%{
+        transform: translateX(0);
+    }
+}
 
 /* MEDIA QUERIES */
 /* For Tablets & Under*/
@@ -247,19 +360,20 @@ and the showcase-container */
     .showcase .grid,
     .stats .grid,
     .cli .grid,  
-    .cloud .grid{
+    .cloud .grid,
+    .features-main .grid,
+    .docs-main .grid{
         grid-template-columns: 1fr;
         grid-template-rows: 1fr;
     }
-
     .showcase{
         /* this will let the whole showcase class and its elements take the height of the container */
         height: auto;
     }
-
     .showcase-text{
         text-align: center;
         margin-top: 40px;
+        animation: slideInFromTop 1s ease-in;
     }
 
     .showcase-form{
@@ -267,6 +381,7 @@ and the showcase-container */
         justify-self: center;
         /* margin auto places the item at the center */
         margin: auto;
+        animation: slideInFromBottom 1s ease-in;
     }
     .cli .grid > *:first-child{
         /* the image element will just take 1 column*/
@@ -274,6 +389,24 @@ and the showcase-container */
         /* the image element will just take 1 row */
         grid-row: 1;
     }
+    .features-head, 
+    .features-sub-head,
+    .docs-head{
+        text-align: center;
+    }
+    .features-head img,
+    .features-sub-head img,
+    .docs-head img{
+        justify-self: center;
+    }
+
+    /* the items will show up individually when screen is in tablet-size */
+    .features-main .grid > *:first-child,
+    .features-main .grid > *:nth-child(2)
+    {
+        grid-column: 1;
+    }
+
 }
 /* For Mobile Devices */
 @media (max-width:500px){
@@ -290,5 +423,15 @@ and the showcase-container */
         /* For a Transparent background */
         background-color: rgb(0, 0, 0, 0.1);
     }
-
+    .features-head img,
+    .features-sub-head img,
+    .docs-head img{
+        grid-column: 1;
+    }
+    .features-head, 
+    .features-sub-head,
+    .docs-head{
+        text-align: center;
+        margin: auto;
+    }
 }

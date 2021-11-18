@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    <title>AhadiTech | Cloud Hosting Solution For Your Business</title>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <div class="nav-bar">
+        <!-- I place the navbar in a container because I don't want the logo to stretch
+        when the screen is at its largest (1100px max) -->
+        <!-- The flex class is to ace the logo and navlinks separately within the navbar -->
+        <div class="container flex">
+            <h1 class="logo">AhadiTech.</h1>
+            <!-- Navbar links -->
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="docs.html">Docs</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+
+    <!-- HEAD AREA -->
+    <section class="docs-head bg-primary py-3">
+        <div class="container grid">
+            <div>
+                <h1 class="xl">Docs</h1>
+                <p class="lead">
+                    Learn how to work with the AhadiTech Platform and Get Started.
+                </p>
+            </div>
+            <img src="images/docs2.png" alt="">
+        </div>
+    </section>
+
+
+    <!-- DOCS-MAIN -->
+    <section class="docs-main my-4">
+        <div class="container grid">
+            <div class="card bg-light p-3">
+                <h3 class="my-1">Essentials</h3>
+                <nav>
+                    <ul>
+                        <!-- 'text-primary' is a utility class for the text color -->
+                        <li><a class="text-primary" href="#">Introduction</a></li>
+                        <li><a href="#">About AhadiTech</a></li>
+                        <li><a href="#">Installation</a></li>
+                    </ul>
+                </nav>
+                <h3 class="my-2">Deployment</h3>
+                <nav>
+                    <ul>
+                        <li><a href="#">Setting Up a Container</a></li>
+                        <li><a href="#">Using the CLI</a></li>
+                        <li><a href="#">Managing Resources</a></li>
+                        <li><a href="#">Upgrade & Downgrade</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="card">
+                <h1>Introduction</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates est alias sed sunt minus optio. Error beatae voluptatibus aut ipsa? Soluta quos magnam perferendis nesciunt delectus, exercitationem fugit quibusdam. Voluptas.</p>
+                <!-- The alert class is used to issue alerts whether an event is Successful(green), Warning(yellow) or Danger(red) -->
+                <div class="alert alert-success">
+                    <i class="fas fa-info fa-1x"></i>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, eius.
+                </div>
+                <h4>Lorem ipsum dolor sit amet.</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium excepturi doloremque eligendi, ad ipsum delectus dolor sed atque debitis inventore!</p>
+                <a href="#" class="btn btn-primary">Install CLI</a>
+
+                <h3>Requirements</h3>
+                <ul>
+                    <li>windows 7, 8, 10, 11, Mac OSX, Linux</li>
+                    <li>Node.js v12, Django, ASP.NET, RubyonRails, Springboot MVC, Laravel, Go </li>
+                </ul>
+
+                <h3>Install</h3>
+                <p>Mac (Homebrew)</p>
+                <pre><code>$ brew  install ahadi-cli</code></pre>
+
+                <p>NPM</p>
+                <pre><code>$ npm install ahadi-cli</code></pre>
+
+                <p>Django</p>
+                <pre><code>$ pip install loruki-cli</code></pre>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer bg-dark py-5">
+        <div class="container grid grid-3">
+            <div>
+                <h1>AhadiTech</h1>
+                <p>Copyright &copy; 2021</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="docs.html">Docs</a></li>
+                </ul>
+            </nav>
+            <div class="social">
+                <a href="#"><i class="fab fa-github fa-2x"></i></a>
+                <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+                <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+                <a href="#"><i class="fab fa-linkedin fa-2x"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
