@@ -69,6 +69,7 @@ img{
     color: var(--dark);
     text-transform: uppercase;
     font-size: 1.1rem;
+    box-shadow: var(--shadow)
 }
 
 .main-nav a:hover{
@@ -93,6 +94,8 @@ img{
 
 /* The grid-template-areas then have to be defined as follows */
 .showcase{
+    /* Since we defined the "grid-template-areas" in the parent container(top-containter), I have to define the grid area I want the positioning to be done
+       and in this case is the class 'showcase' */
     grid-area: showcase;
     min-height: 400px;
     background: url("images/web4.jpg");
@@ -101,7 +104,7 @@ img{
     padding: 3rem;
     color:var(--primary);
     display: flex;
-    /* The elements in this class will be placed one after the other in a vertical manner */
+    /* The elements(h1, p, readmore-btn) in this class will be placed one after the other in a vertical manner */
     flex-direction: column;
     /* align-items:start; will get the elements to the start(left) side of their class border */
     align-items: start;
@@ -132,7 +135,7 @@ img{
     padding: 1.5rem;
 }
 
-.price{
+.top-box .price{
     font-size: 2.5rem;
 }
 .top-box-a{
@@ -147,7 +150,7 @@ img{
 /* BOXES */
 .boxes{
     display:grid;
-    /* This helps to avoid manually changing the properties when adding items.
+    /* This helps to avoid manually changing the template column properties for each item, when adding items.
     'auto-fit, minmax' funtions will move the items automatically down when reducing screen size. 
     this will prevent me from specify the media query for each screen size */
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
